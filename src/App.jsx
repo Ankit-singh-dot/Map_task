@@ -44,7 +44,7 @@ const App = () => {
             const timeDiff =
               (new Date(curr.timestamp) - new Date(prev.timestamp)) / 1000;
 
-            const calculatedSpeed = (distance / timeDiff) * 3.6; // km/h
+            const calculatedSpeed = (distance / timeDiff) * 3.6; 
             setSpeed(calculatedSpeed.toFixed(2));
           }
           return prevIndex + 1;

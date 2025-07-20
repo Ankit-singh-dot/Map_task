@@ -28,13 +28,23 @@ const MapView = ({ route, currentIndex }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
+      <Polyline
+        positions={route
+          .slice(0, currentIndex + 1)
+          .map((point) => [point.latitude, point.longitude])}
+        color="gray"
+        weight={3}
+        opacity={0.5}
+      />
+
 
       <Polyline
-        positions={route.map((point) => [point.latitude, point.longitude])}
+        positions={route
+          .slice(currentIndex)
+          .map((point) => [point.latitude, point.longitude])}
         color="blue"
         weight={3}
       />
-
 
       <Marker
         position={[currentPos.latitude, currentPos.longitude]}
